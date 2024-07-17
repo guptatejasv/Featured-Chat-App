@@ -1,0 +1,46 @@
+<h1>Register</h1>
+<form action="" method="POST">
+  <input
+    type="text"
+    name="name"
+    id="name"
+    required
+    placeholder="Enter your Name"
+  />
+  <br /><br />
+  <input
+    type="email"
+    name="email"
+    id="email"
+    required
+    placeholder="Enter your Email"
+  />
+  <br /><br />
+  <input
+    type="password"
+    name="password"
+    id="password"
+    required
+    placeholder="Enter password"
+  />
+  <br /><br />
+  <input
+    type="password"
+    name="passwordConfirm"
+    id="passwordConfirm"
+    required
+    placeholder="Enter password Again"
+  />
+  <br /><br />
+  <input
+    type="submit"
+    name="submit"
+    id="submit"
+    value="Sign Up"
+    placeholder="Enter Password Again"
+  />
+</form>
+
+<% if(typeof message != 'undefined'){ %>
+<p style="color: green"><%= message %></p>
+<% } %>
