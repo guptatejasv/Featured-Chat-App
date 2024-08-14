@@ -30,11 +30,11 @@ exports.signup = async (req, res) => {
 
     await user.save();
     res.redirect("/");
-    res.status(201).json({
-      status: "success",
-      token,
-      user,
-    });
+    // res.status(201).json({
+    //   status: "success",
+    //   token,
+    //   user,
+    // });
   } catch (err) {
     res.status(400).json({
       status: "fail",
