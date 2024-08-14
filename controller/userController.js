@@ -29,6 +29,7 @@ exports.signup = async (req, res) => {
     // console.log(user);
 
     await user.save();
+    res.redirect("/");
     res.status(201).json({
       status: "success",
       token,
