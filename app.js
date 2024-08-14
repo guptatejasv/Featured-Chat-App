@@ -47,9 +47,13 @@ usp.on("connection", async function (socket) {
 });
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/Chat_Application").then(() => {
-  console.log("Connected to the database.");
-});
+mongoose
+  .connect(
+    "mongodb+srv://guptatejasv86086:IHiNa09sVQaCgM9N@cluster0.6etxq2u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+  )
+  .then(() => {
+    console.log("Connected to the database.");
+  });
 app.use("/", UserRoute);
 server.listen(process.env.PORT, () => {
   console.log(`Server is connected at port ${process.env.PORT}`);
