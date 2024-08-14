@@ -22,6 +22,10 @@
     margin-bottom: 1.5rem;
     color: #333;
   }
+  .logo {
+    width: 100px; /* Adjust the size as needed */
+    margin-bottom: 1rem;
+  }
   input[type="email"],
   input[type="password"] {
     width: calc(100% - 2rem);
@@ -52,21 +56,23 @@
   }
 </style>
 
-<h1>Login<img src="/public/css/VibeWire.jpg" alt="" /></h1>
+<div class="login-container">
+  <img src="../public/css/VibeWire.jpg" alt="Logo" class="logo" />
+  <h1>Login</h1>
+  <form action="" method="POST">
+    <input type="email" placeholder="Enter Email" name="email" required />
+    <br /><br />
+    <input
+      type="password"
+      placeholder="Enter password"
+      name="password"
+      required
+    />
+    <br /><br />
+    <input type="submit" value="Login" />
+  </form>
 
-<form action="" method="POST">
-  <input type="email" placeholder="Enter Email" name="email" required />
-  <br /><br />
-  <input
-    type="password"
-    placeholder="Enter password"
-    name="password"
-    required
-  />
-  <br /><br />
-  <input type="submit" value="Login" />
-</form>
-
-<% if(typeof message != 'undefined'){ %>
-<p style="color: rgb(203, 10, 10)"><%= message %></p>
-<% } %>
+  <% if(typeof message != 'undefined'){ %>
+  <p><%= message %></p>
+  <% } %>
+</div>
