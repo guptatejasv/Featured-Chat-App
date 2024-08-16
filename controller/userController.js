@@ -2,6 +2,7 @@ const User = require("./../models/userModel");
 const Chat = require("./../models/chatModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const transporter = require("./../middleware/nodemailer");
 exports.signupLoad = async (req, res) => {
   try {
     res.render("register");
@@ -29,6 +30,12 @@ exports.signup = async (req, res) => {
     // console.log(user);
 
     await user.save();
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: "VibeWire: Registration Successful!",
+      text: `Your registration at VibeWire Chat App is completed successfully.\nEnjoy the Vibe, Share the Wire..😉`,
+    });
     res.redirect("/");
     // res.status(201).json({
     //   status: "success",
